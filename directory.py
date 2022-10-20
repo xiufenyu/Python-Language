@@ -1,6 +1,13 @@
 
 import os
 
+# check if file or directory
+os.path.isfile("bob.txt")
+os.path.isdir("bob")
+
+# check if a file exists
+os.path.exists("/home/wolf/package.txt")
+
 # list names of files and folders in a directory without path
 name_list = os.listdir('/home/wolf')
 print(name_list)
