@@ -23,3 +23,9 @@ print(subdirs)
 # os.walk
 for root, dirs, files in os.walk("/home/wolf/"):
     print(f"{root},---- {dirs},--- {files}")
+
+
+# check empty path is empty
+# In Python, os.listdir returns a list, empty list is evaluated to be False
+if not os.listdir('your-path'):
+    print(f"Empty: {sdir}")
