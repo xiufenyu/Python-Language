@@ -32,3 +32,13 @@ def attach_databases(db_names):
             print(insert_sql)
             cursor.execute(insert_sql)
             conn.commit()
+
+
+
+'''
+Question:  "NOT IN (SUBQUERY)" is not working as expected?
+    The normal reason for problems with not in is the presence of NULL values. NOT IN always fails when the list has NULL because NULL comparisons cannot be true.
+Solution: 
+#  I prefer to use NOT EXISTS, because it has the semantics that you expect:
+   SELECT COUNT(DISTINCT WIDGET_ID) FROM A WHERE NOT EXISTS (SELECT WIDGET_ID FROM B WHERE B.WIDGET_ID = A.WIDGET_ID)
+''' 
